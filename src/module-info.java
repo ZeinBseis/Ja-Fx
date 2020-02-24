@@ -5,4 +5,5 @@ module Ja.Fx {
 
     opens sample;
     opens MultiThrd;
+    opens MultiThrd.Basic;
 }
