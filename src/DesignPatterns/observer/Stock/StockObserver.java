@@ -1,4 +1,4 @@
-package DesignPatterns.observer;
+package DesignPatterns.observer.Stock;
 
 // Represents each Observer that is monitoring changes in the subject
 

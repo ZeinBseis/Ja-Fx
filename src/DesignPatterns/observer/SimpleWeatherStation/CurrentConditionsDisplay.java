@@ -1,4 +1,4 @@
-package WeatherStation;
+package DesignPatterns.observer.SimpleWeatherStation;
 
 public class CurrentConditionsDisplay implements Observer {
     private float temperature;

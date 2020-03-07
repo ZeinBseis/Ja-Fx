@@ -1,4 +1,4 @@
-package DesignPatterns.observer;
+package DesignPatterns.observer.Stock;
 
 // This interface handles adding, deleting and updating
 // all observers
