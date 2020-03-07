@@ -6,4 +6,8 @@ module Ja.Fx {
     opens sample;
     opens MultiThrd;
     opens MultiThrd.Basic;
+    opens SimUDuck;
+    opens WeatherStation;
+    opens DesignPatterns.factory;
+    opens DesignPatterns.observer;
 }
