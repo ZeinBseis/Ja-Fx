@@ -1,4 +1,4 @@
-package MultiThrd;
+package MultiThrd.TaskThread;
 
 class PrintChar implements Runnable {
 

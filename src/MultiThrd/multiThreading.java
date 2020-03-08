@@ -10,7 +10,6 @@ class printChar implements Runnable {
 		times = t;
 	}
 
-	@override
 	public void run () {
 		for (int i = 0; i < times; i++) {
 		System.out.print(toPrint);
@@ -32,8 +31,7 @@ class printNum implements Runnable {
 		lastNum = n;
 
 	}
-	
-	@override
+
 	public void run () {
 		for (int i = 0; i < lastNum; i++) {
 			System.out.print(" "+ i);
