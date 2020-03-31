@@ -8,34 +8,35 @@ import java.net.Socket;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class RunCommand {
     public static void main (String [] args) {
         try(Socket socket = new Socket("localhost", 7789)) {
             BufferedReader incoming = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter outgoing = new PrintWriter(socket.getOutputStream(),true);
+            StringBuilder sb = new StringBuilder();
 
             Scanner scanner = new Scanner(System.in);
-            String send;
-            String response;
-
-            do {
+            String send = "";
+            String response = "";
+            response = incoming.readLine();
+            System.out.println(response);
+            response = incoming.readLine();
+            System.out.println(response);
+            while (!send.equals("logout")){
                 System.out.println("Enter Command: ");
                 send = scanner.nextLine();
                 outgoing.println(send);
-                if(!send.equals("logout")) {
-                    response = incoming.readLine();
-//                    TimeUnit.SECONDS.sleep(1);
+
+                while ((response = incoming.readLine()) != null) {
                     System.out.println(response);
+                    sb.append(response);
+                    sb.append('\n');
+                    if (!(incoming.ready())) {break;}
+
                 }
-
-            } while (!send.equals("logout"));
-
+            }
         } catch (IOException e) {
             System.out.println("Client Error: "+ e.getMessage());
         }
     }
-
 }
-
-
-

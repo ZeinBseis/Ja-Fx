@@ -4,10 +4,12 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class BasicWindow extends Application {
@@ -27,10 +29,14 @@ public class BasicWindow extends Application {
         lamdaBut = new Button();
         lamdaBut.setText("lamda Button");
         lamdaBut.setOnAction(e -> System.out.println("this is a lambda button"));
-        StackPane layout = new StackPane();
-        layout.getChildren().add(button);
-        layout.getChildren().add(lamdaBut);
+//        StackPane layout = new StackPane();
+//        layout.getChildren().add(button);
+//        layout.getChildren().add(lamdaBut);
+        VBox layout = new VBox();
+        layout.getChildren().addAll(button,lamdaBut);
         primaryStage.setScene(new Scene(layout, 300, 275));
+        layout.setAlignment(Pos.CENTER);
+        layout.setSpacing(10);
 
 
 

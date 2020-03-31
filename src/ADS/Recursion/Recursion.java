@@ -35,10 +35,13 @@ public class Recursion {
 //        System.out.println(" ");
 //        System.out.println("This is recursive "+fibonacci(x));
 
-        System.out.println("Enter a second number");
-        int y = scanner.nextInt();
+//        System.out.println("Enter a second number");
+//        int y = scanner.nextInt();
 
-        System.out.println(gcd(x,y));
+//        System.out.println(gcd(x,y));
+
+        System.out.println(mi183(x));
+
 
     }
 
@@ -159,6 +162,12 @@ public class Recursion {
 
         }
         return gcd (y, x%y);
+    }
+
+    // last ex 18.4
+    public static float mi183(float i) {
+        if (i == 1) { return 1;}
+        return 1/ i + mi183(i-1);
     }
 
 }

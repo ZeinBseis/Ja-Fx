@@ -11,5 +11,9 @@ module Ja.Fx {
     opens DesignPatterns.observer.SimpleWeatherStation;
     opens DesignPatterns.observer.Stock;
     opens DesignPatterns.observer.weather;
+//    opens ProjectDingen.one.Client;
+    opens ProjectDingen.Client;
+//    opens ProjectDingen.ClientCollege;
+    opens ProjectDingen.chat;
 
 }
