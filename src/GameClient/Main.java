@@ -2,21 +2,27 @@ package GameClient;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+
 
 public class Main {
     public static void main (String[]args) {
         RunCommand com = new RunCommand();
         Connector connector = new Connector("localhost", 7789);
-        String x = com.runThis("get","gamelist",connector.getSocket());
+        RunCommand.runThis("login","King",connector.getSocket());
+        String x = com.runThis("get","playerlist",connector.getSocket());
         System.out.println(x);
-        CommandHandler commandHandler = new CommandHandler();
-        System.out.println(commandHandler.handle(x));
-//        try {
-//            TimeUnit.SECONDS.sleep(5);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        String y = CommandHandler.handle(x);
+        System.out.println(y);
+        System.out.println(Arrays.toString(CommandHandler.toArray(y)));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Who would you like to challenge?");
+        String challenge = scanner.nextLine();
+        System.out.println("in which game?");
+        String game = scanner.nextLine();
+
+
 
     }
 }

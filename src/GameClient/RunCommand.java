@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class RunCommand {
 
 
-    public String runThis(String command, String argument, Socket socket) {
+    public static String runThis(String command, String argument, Socket socket) {
 
 
         try{
@@ -21,21 +21,13 @@ public class RunCommand {
 
             String send = command + " " + argument;
             String response = "";
-//            String fullResponse = "";
 
-//            if (Connector.noOfObjects < 1) {
-//                response = incoming.readLine();
-//                System.out.println(response);
-//                response = incoming.readLine();
-//                System.out.println(response);
-//                incoming = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//            }
             outgoing.println(send);
 
             while ((response = incoming.readLine()) != null) {
-//                System.out.println(response);
+
                 Thread.sleep(8);
-//                TimeUnit.MILLISECONDS.sleep(500);
+
                 if (!(incoming.ready())) {
                     break;
                 }
