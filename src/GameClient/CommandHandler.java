@@ -5,42 +5,50 @@ public class CommandHandler {
     private String toCheck;
     private String toHandle;
 
-    public CommandHandler(String toHandle) {
+    public CommandHandler() {
 
 //        this.toCheck = toCheck;
-        this.toHandle = toHandle;
+//        this.toHandle = toHandle;
     }
 
-    public String handle() {
+    public String handle(String toHandle) {
 
-        if (toHandle.contains("SVR HELP")) { return helper(toHandle);}
-        else if (toHandle.equals("OK")) { return commandSucess();}
-        else if (toCheck.equals("logout")) {  loggedOut();}
-        else if (toCheck.equals("get gamelist")) {gamelist();}
-        else if (toCheck.equals("get playerlist")) {playerlist();}
-        else if (toCheck.contains("subscribe")) {}
+        if (toHandle.startsWith("SVR HELP")) { return helper(toHandle);}
+        else if (toHandle.startsWith("OK")) { return commandSucess();}
+        else if (toHandle.startsWith("SVR PLAYERLIST")) { playerlist(toHandle); }
+        else if (toHandle.startsWith("SVR GAMELIST")) {gamelist(toHandle);}
+        else if (toHandle.startsWith("SVR GAME CHALLENGE")) {playerlist(toHandle);}
+        else if (toCheck.contains("SVR GAME YOURTURN")) {yourTurn();}
         return "0";
+    }
+
+    private void yourTurn() {
     }
 
     private String commandSucess() {
         return "Command was successful";
     }
 
-    private void playerlist() {
+    private String[] playerlist(String toHandle) {
+        toHandle = stringCleaner(toHandle);
+        return toHandle.split(" ");
     }
 
-    private void gamelist() {
+    private String[] gamelist(String toHandle) {
+        toHandle = stringCleaner(toHandle);
+        return toHandle.split(" ");
     }
 
-    private void loggedOut() {
-    }
-
-    private String loggedIn() {
-        return "You are logged in";
-    }
 
     private String helper(String toHandle) {
-        return toHandle;
+        return "To see Help please visit Blackboard and see Protocol.txt";
     }
 
+    private String stringCleaner (String dirty) {
+        dirty = dirty.substring(dirty.indexOf("[") + 1,dirty.indexOf("]"));
+        dirty = dirty.replace("\"","");
+        dirty = dirty.replace(",","");
+        return dirty;
     }
+
+}

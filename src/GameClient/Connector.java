@@ -5,11 +5,13 @@ import java.net.Socket;
 
 public class Connector {
 
+    static int noOfObjects = 0;
     String ip;
     int port;
     Socket socket;
 
     public Connector (String ip, int port) {
+        noOfObjects +=1;
         this.ip = ip;
         this.port = port;
         try {

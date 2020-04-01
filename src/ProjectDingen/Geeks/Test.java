@@ -1,14 +1,32 @@
 package ProjectDingen.Geeks;
 
-public class Test {
-    public static void main (String []args) {
-        StringBuilder sb = new StringBuilder();
-        String a = "";
-        String b = "123";
-        String c = "456";
+import java.util.Arrays;
 
-        sb.append(a);
-        a = a.concat(b + "\n" + c);
-        System.out.println(a);
+public class Test {
+
+    public static String cleaner(String toClean) {
+        toClean = toClean.substring(toClean.indexOf("[") + 1,toClean.indexOf("]"));
+        toClean = toClean.replace("\"","");
+        toClean = toClean.replace(",","");
+        return toClean;
     }
+
+    public static String[] lister(String list) {
+        return list.split(" ");
+    }
+    public static void main (String []args) {
+
+        String players = "SVR PLAYERLIST [\"lo\", \"hi\"]";
+        String game = "SVR GAMELIST ['Reversi, 'Tic-tac-toe']";
+
+        String x = cleaner(players);
+
+        String[] y =  lister(x);
+
+        System.out.println(Arrays.toString(y));
+
+
+
+    }
+
 }

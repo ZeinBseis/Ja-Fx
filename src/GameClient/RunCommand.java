@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+
 import java.util.concurrent.TimeUnit;
 
 public class RunCommand {
@@ -13,7 +14,6 @@ public class RunCommand {
 
     public String runThis(String command, String argument, Socket socket) {
 
-        int begin = 0;
 
         try{
             BufferedReader incoming = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -21,29 +21,30 @@ public class RunCommand {
 
             String send = command + " " + argument;
             String response = "";
-            String fullResponse = "";
+//            String fullResponse = "";
 
-            if (begin == 0) {
-                response = incoming.readLine();
-                System.out.println(response);
-                response = incoming.readLine();
-                System.out.println(response);
-            }
+//            if (Connector.noOfObjects < 1) {
+//                response = incoming.readLine();
+//                System.out.println(response);
+//                response = incoming.readLine();
+//                System.out.println(response);
+//                incoming = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+//            }
             outgoing.println(send);
 
             while ((response = incoming.readLine()) != null) {
 //                System.out.println(response);
-                fullResponse = fullResponse.concat(response + "\n");
-
+                Thread.sleep(8);
+//                TimeUnit.MILLISECONDS.sleep(500);
                 if (!(incoming.ready())) {
                     break;
                 }
 
             }
 
-            return fullResponse;
+            return response;
 
-        } catch (IOException ex) {
+        } catch (IOException | InterruptedException ex) {
             String result = ex.getMessage();
             return result;
         }
