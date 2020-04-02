@@ -26,7 +26,7 @@ public class RunCommand {
 
             while ((response = incoming.readLine()) != null) {
 
-                Thread.sleep(8);
+                Thread.sleep(16);
 
                 if (!(incoming.ready())) {
                     break;
@@ -40,5 +40,7 @@ public class RunCommand {
             String result = ex.getMessage();
             return result;
         }
+
+
     }
 }
