@@ -15,5 +15,6 @@ module Ja.Fx {
     opens ProjectDingen.Client;
 //    opens ProjectDingen.ClientCollege;
     opens ProjectDingen.chat;
+    opens GameClient2;
 
 }

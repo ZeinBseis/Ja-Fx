@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -29,6 +30,7 @@ public class Multiscene extends Application {
 
         // Layouts
         VBox lay1 = new VBox(15);
+        lay1.setAlignment(Pos.CENTER);
         lay1.getChildren().addAll(label1, but);
         scene1 = new Scene(lay1, 200,300);
 
