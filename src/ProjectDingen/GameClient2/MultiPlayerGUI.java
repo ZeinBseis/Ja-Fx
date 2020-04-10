@@ -1,19 +1,12 @@
-package GameClient2;
+package ProjectDingen.GameClient2;
 
 import java.io.*;
-import java.net.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
-import GameClient.SendToServer;
 import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 

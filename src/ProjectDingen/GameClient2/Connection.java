@@ -1,4 +1,4 @@
-package GameClient2;
+package ProjectDingen.GameClient2;
 
 import java.io.IOException;
 import java.net.Socket;

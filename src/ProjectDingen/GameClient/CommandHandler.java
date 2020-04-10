@@ -1,4 +1,4 @@
-package GameClient;
+package ProjectDingen.GameClient;
 
 public class CommandHandler {
 

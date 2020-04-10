@@ -1,9 +1,4 @@
-package GameClient;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
+package ProjectDingen.GameClient;
 
 
 public class Main {
